@@ -1,0 +1,234 @@
+global proc float Calculator (float $numbers[], string $operation)
+{
+    float $return;
+    
+    // if addition
+    if ($operation == "add")
+    {
+        $return = AddNums($numbers);
+    }
+    // if subtraction
+    else if ($operation == "subtract")
+    {
+        $return = SubtractNums($numbers);
+    }
+    // if multiplication
+    else if ($operation == "multiply")
+    {
+        $return = MultiplyNums($numbers);
+    }
+    // if division
+    else if ($operation == "divide")
+    {
+        $return = DivideNums($numbers);
+    }
+    // if Mean
+    else if ($operation == "mean")
+    {
+        $return = MeanNums($numbers);
+    }
+    // if Median
+    else if ($operation == "median")
+    {
+       $return = MedianNums($numbers);
+    }
+    //if Mode
+    else if ($operation == "mode")
+    {
+       $return = ModeNums($numbers);
+    }
+    //if Power
+    else if ($operation == "power")
+    {
+        $return = PowerNums($numbers);
+    }
+    
+    return $return;
+}
+
+
+global proc MeanNums ()
+{
+    // 
+}
+
+
+global proc MedianNums (float $numbers[])
+{
+    int $length = size ($numbers);
+    float $sum, $sum1, $sum2;
+        $numbers = 'sort $numbers';
+        
+    if ($length % 2 == 0)
+    {
+        $sum1 = $numbers [$length / 2];
+        $sum2 = $numbers [$length / 2 - 1];
+        $sum = ($sum1 + $sum2) / 2;
+    }
+    else {
+        $sum = $numbers [$length / 2};
+    }
+    
+    print ($operation)
+    
+    return $sum; 
+}
+
+global proc ModeNums(float $numbers[])
+{
+    float $values[];
+    float $frequency[];
+
+    for ($i=0; $i<size($numbers); $i++)
+    {
+        if (!floatArrayContains($numbers[$i], $values))
+        {
+            $values[size($values)] = $numbers[$i];
+            $frequency[size($values)] = 1;
+        }
+        else
+        {
+            int $index;
+            $index = floatArrayFind($numbers[$i], 0, $values);
+            $frequency[$index] = $frequency[$index] + 1;
+        }
+    }
+    // Loop through frequency[] to find largest value
+    for ($i = 0; $i < size($frequency[]; + 1))
+    {
+        if ($frequency[$i] == $
+        }
+
+    // Get the index of the said value
+    
+    // Get assocaited value from $values[]
+    
+    // Return as the mode
+    return $sum;
+}
+
+
+global proc PowerNums( float $numbers, float $exponent)
+{
+    float $operation = $numbers;
+    
+    for ($i = 2; $i <= $exponent; $i++)
+    {
+        $operation = $operation * $numbers; 
+    }
+    
+    print ($operation);
+    
+    return $sum;
+}
+
+global proc SubtractNums (float $numbers [])
+{
+    float $sum = 0;
+    string $operation = "";
+    
+    for ($n in $numbers)
+    {
+        $sum -= $n;
+        
+        if ($operation == "")
+        {
+            $operation = $n;
+        }
+        
+        else 
+        {
+            $operation = $operation + " - " + $n;
+        }    
+    }
+   
+   $operation = $operation + " = " + $sum;
+   
+   print ($operation);
+   
+   return $sum;
+}
+
+
+global proc AddNums (float $numbers [])
+{
+    float $sum = 0;
+    string $operation = "";
+    
+    for ($n in $numbers)
+    {
+        $sum += $n;
+        
+        if ($operation == "")
+        {
+            $operation = $n;
+        }
+        
+        else 
+        {
+            $operation = $operation + " + " + $n;
+        }    
+    }
+   
+   $operation = $operation + " = " + $sum;
+   
+   print ($operation);
+   
+   return $sum;
+}
+
+    
+global proc DivideNums (float $numbers [])
+{
+    float $sum = 0;
+    string $operation = "";
+    
+    for ($n in $numbers)
+    {
+        $sum /= $n;
+        
+        if ($operation == "")
+        {
+            $operation = $n;
+        }
+        
+        else 
+        {
+            $operation = $operation + " / " + $n;
+        }    
+    }
+   
+   $operation = $operation + " = " + $sum;
+   
+   print ($operation);
+   
+   return $sum;
+}
+
+
+global proc MultipyNums (float $numbers [])
+{
+    float $sum = 0;
+    string $operation = "";
+    
+    for ($n in $numbers)
+    {
+        $sum *= $n;
+        
+        if ($operation == "")
+        {
+            $operation = $n;
+        }
+        
+        else 
+        {
+            $operation = $operation + " * " + $n;
+        }    
+    }
+   
+   $operation = $operation + " = " + $sum;
+   
+   print ($operation);
+   
+   return $sum;
+}
