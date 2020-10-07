@@ -1,0 +1,27 @@
+proc
+{
+// $color - Argument specifying color to assign
+string ogjectArray
+
+// Variables ->
+
+// $controls - store a list of currently selected objects (ls - sl)
+
+// For Loop through $controls array
+for($object in $objectArray)
+{
+   // Find the associated shape node(s) *listRelatives
+
+// Enable override on shape
+
+setAttr "nurbCircleShape8.overrideEnabled" 1;
+string $shapeNode[] = 'listRelatives -shape $objectArray
+for($shape in
+
+// Change the shape color to $color (0-31)
+
+setAttr ($shape + "nurbsCircleShape8.overrideColor" 6; 
+}
+
+}
+
