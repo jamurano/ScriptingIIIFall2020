@@ -1,0 +1,33 @@
+func RandomPlacement ()
+{
+    int $numOfDuplicates;
+    
+    float $minX = -10;
+    float $maxX = 10;
+    float $minY = -10;
+    float $maxY = 10;
+    float $minZ = -10;
+    float $maxZ = 10;
+    
+    
+    string $selectedObjs = 'ls - sl';
+    
+    for($s in $selectedObjs) 
+    {
+        for($i = 0; i < $numOfDuplicates; $i++)
+        {
+        
+        duplicate -rr;
+        
+        float $randX = rand $minX $maxX;
+        
+        float $randY = rand $minY $maxY;
+        
+        float $randZ = rand $minZ $maxZ;
+        
+        move -r $randX, $randY, $randZ;
+        }
+
+    }
+
+}
